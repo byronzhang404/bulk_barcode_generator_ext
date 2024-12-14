@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="lib/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Barcode Generator</h2>
+        
+        <!-- Input Area -->
+        <div class="input-section">
+            <textarea id="barcodeInput" placeholder="Enter one barcode per line"></textarea>
+            <div class="row">
+                <div class="col-xs-8">
+                    <select class="form-control" id="barcodeType">
+                        <option value="CODE128">CODE128 auto</option>
+                        <option value="CODE128A">CODE128 A</option>
+                        <option value="CODE128B">CODE128 B</option>
+                        <option value="CODE128C">CODE128 C</option>
+                        <option value="EAN13">EAN13</option>
+                        <option value="EAN8">EAN8</option>
+                        <option value="UPC">UPC</option>
+                        <option value="CODE39">CODE39</option>
+                        <option value="ITF14">ITF14</option>
+                        <option value="ITF">ITF</option>
+                        <option value="MSI">MSI</option>
+                        <option value="MSI10">MSI10</option>
+                        <option value="MSI11">MSI11</option>
+                        <option value="MSI1010">MSI1010</option>
+                        <option value="MSI1110">MSI1110</option>
+                        <option value="pharmacode">Pharmacode</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <button id="generateButton" class="btn btn-primary btn-block">Generate</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barcode Settings -->
+        <div class="settings-section">
+            <div class="row">
+                <!-- 左列 -->
+                <div class="col-xs-6">
+                    <div class="setting-item">
+                        <label>Bar Width</label>
+                        <input type="range" id="bar-width" min="1" max="4" step="1" value="2"/>
+                        <span class="value-display" id="bar-width-display">2</span>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Height</label>
+                        <input type="range" id="bar-height" min="10" max="150" step="5" value="100"/>
+                        <span class="value-display" id="bar-height-display">100</span>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Margin</label>
+                        <input type="range" id="bar-margin" min="0" max="25" step="1" value="10"/>
+                        <span class="value-display" id="bar-margin-display">10</span>
+                    </div>
+                </div>
+
+                <!-- 右列 -->
+                <div class="col-xs-6">
+                    <div class="setting-item">
+                        <label>Colors</label>
+                        <div class="color-inputs">
+                            <input type="color" id="background-color" value="#FFFFFF" title="Background"/>
+                            <input type="color" id="line-color" value="#000000" title="Line"/>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Text</label>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-primary display-text" value="true">Show</button>
+                            <button type="button" class="btn btn-sm display-text" value="false">Hide</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="font-options" style="display: block;">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="setting-item">
+                            <label>Align & Font</label>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm text-align" value="left">L</button>
+                                <button type="button" class="btn btn-sm btn-primary text-align" value="center">C</button>
+                                <button type="button" class="btn btn-sm text-align" value="right">R</button>
+                            </div>
+                            <select class="form-control input-sm" id="font">
+                                <option value="monospace">Mono</option>
+                                <option value="sans-serif">Sans</option>
+                                <option value="serif">Serif</option>
+                                <option value="fantasy">Fantasy</option>
+                                <option value="cursive">Cursive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="setting-item">
+                            <label>Style</label>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm font-option" value="bold">B</button>
+                                <button type="button" class="btn btn-sm font-option" value="italic">I</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="setting-item">
+                            <label>Font Size</label>
+                            <input type="range" id="bar-fontSize" min="8" max="36" step="1" value="20"/>
+                            <span class="value-display" id="bar-fontSize-display">20</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="setting-item">
+                            <label>Text Margin</label>
+                            <input type="range" id="bar-text-margin" min="-15" max="40" step="1" value="0"/>
+                            <span class="value-display" id="bar-text-margin-display">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="lib/jquery.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>

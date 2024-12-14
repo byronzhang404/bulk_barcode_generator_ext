@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Barcode Generator Helper",
+    "version": "1.0",
+    "description": "Quick access to bulk barcode generator",
+    "permissions": [
+        "tabs",
+        "scripting",
+        "storage",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "https://bulkbarcodegenerator.org/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "logo.ico",
+            "48": "logo.ico",
+            "128": "logo.ico"
+        }
+    },
+    "icons": {
+        "16": "logo.ico",
+        "48": "logo.ico",
+        "128": "logo.ico"
+    }
+}
